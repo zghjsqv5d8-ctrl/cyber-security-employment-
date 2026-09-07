@@ -1,548 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Security</title>
-    <link href="bootstrap.css" rel="stylesheet"> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberShield Solutions — Careers in Cybersecurity</title>
+<meta name="description" content="Join CyberShield Solutions — cybersecurity careers in threat monitoring, penetration testing, network security and research.">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- logo -->
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
 
-<div class="d-flex justify-content-center mt-5">
-    <h1 class="me-5 mt-3 title">Cyber</h1>
+    <a class="navbar-brand" href="#home">
+      <img src="img/logo.png" alt="CyberShield logo" class="navbar-logo" width="34" height="34">
+      CyberShield
+    </a>
 
-    <img class="rounded-circle img-fluid logo" width="150" src="img/logo.png">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <h1 class="ms-5 mt-3 title">Security</h1>
-</div>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#positions">Positions</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item ms-lg-2">
+          <a href="#positions" class="btn btn-accent btn-sm">View Positions</a>
+        </li>
+      </ul>
+    </div>
 
-<!-- Nav Bar -->
-
-<nav class="navbar navbar-expand-lg fixed-top mb-5">
-
-<div class="container-fluid mb-5">
-
-<div class="btn-group flex-wrap justify-content-center w-100" role="group">
-
-<div class="btn-group" role="group" aria-label="Basic example">
- <a href="#home" class="btn btn-primary">Home</a>
-<a href="#about" class="btn btn-primary">About</a>
-<a href="#positions" class="btn btn-primary">Positions</a>
-<a href="#skills" class="btn btn-primary">Skills</a>
-<a href="#process" class="btn btn-primary">Process</a>
-<a href="#faq" class="btn btn-primary">FAQ</a>
-<a href="#contact" class="btn btn-primary">Contact</a>
-</div>
-
-</div>
-
-</div>
-
+  </div>
 </nav>
 
-<p class="text-primary fs-1">----------</p>
-<p class="text-end text-primary fs-1">----------</p>
+<main>
 
+  <!-- ============ HERO ============ -->
+  <section id="home" class="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row align-items-center gy-5">
 
-<!-- Home --> 
+        <div class="col-lg-6 reveal">
+          <span class="eyebrow"><span class="status-dot"></span> We're hiring</span>
+          <h1 class="hero-title">Defend the <span class="text-accent">digital world</span> with us.</h1>
+          <p class="hero-text">
+            CyberShield Solutions protects organizations from modern digital threats.
+            We're building a team of security professionals ready to analyze risk,
+            solve hard problems, and keep critical systems safe.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="#positions" class="btn btn-accent btn-lg">View Open Positions</a>
+            <a href="#about" class="btn btn-outline-light btn-lg">Learn More</a>
+          </div>
+        </div>
 
-<div id="home" class="mt-5 mb-5 d-flex">
- 
- <div class="hometext">
-   <h1 class="text-white">Defend the 
-   <br><span class="text-primary ms-5">Digital World</span> 
-   <br>With Us</h1>
-   </div>
+        <div class="col-lg-6 reveal">
+          <img src="img/home.png" alt="Security analyst monitoring systems" class="img-fluid hero-image">
+        </div>
 
-   <img src="img\home.png" class="homephoto">
+      </div>
+    </div>
+  </section>
 
-</div>
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row gy-4 align-items-center">
 
-<p class="text-primary fs-1">----------</p>
-<p class="text-end text-primary fs-1">----------</p>
+        <div class="col-lg-6 reveal">
+          <p class="section-eyebrow">About Us</p>
+          <h2 class="section-title">Who we are</h2>
+          <p class="lead-text">
+            We are a cybersecurity company dedicated to protecting organizations
+            from modern digital threats. Our mission is to build secure
+            environments through advanced security solutions, innovation, and
+            the expertise of our team.
+          </p>
+        </div>
 
-<!-- About -->
+        <div class="col-lg-6 reveal">
+          <p class="body-text">
+            Strong cybersecurity starts with skilled professionals. We're
+            building a team of passionate security experts who are ready to
+            analyze threats, solve complex challenges, and defend the systems
+            our clients depend on every day.
+          </p>
+        </div>
 
+      </div>
+    </div>
+  </section>
 
-<div id="about" class="mt-5 mb-5"> 
+  <!-- ============ POSITIONS ============ -->
+  <section id="positions" class="section section-alt">
+    <div class="container">
+      <p class="section-eyebrow text-center">Careers</p>
+      <h2 class="section-title text-center mb-5">Open positions</h2>
 
-<div class="d-flex justify-content-center"> 
+      <div class="row g-4">
 
- <div class="d-flex flex-column align-items-center text-center">
+        <!-- Position 1 -->
+        <div class="col-md-6 col-lg-3">
+          <article class="position-card h-100">
+            <img src="img/card1.png" class="position-card__img" alt="Security analyst reviewing dashboards">
+            <div class="position-card__body">
+              <h3 class="position-card__title">Security Analyst</h3>
+              <p class="position-card__text">Monitor systems, analyze threats, and help protect organizations from cyber attacks.</p>
+              <ul class="tag-list">
+                <li>Threat Monitoring</li>
+                <li>Security Analysis</li>
+                <li>Incident Response</li>
+              </ul>
+            </div>
+            <div class="position-card__footer">
+              <a href="#" class="btn btn-accent btn-sm">Apply</a>
+              <a href="#" class="btn btn-link-light btn-sm">Details</a>
+            </div>
+          </article>
+        </div>
 
-    <h1 class="title mb-5">_About US_</h1>
-    <h2 class="text-white mb-2">Who We Are?</h2>
-    <p class="text-white"> We are a cybersecurity company dedicated to protecting <br>
-     organizations from modern digital threats. Our mission is <br>
-     to create secure environments through advanced <br>
-     security solutions, innovation, and <br> 
-     the expertise of our talented team. </p>
-      
-     <p class="text-white"> We believe that strong cybersecurity starts with skilled <br>
-     professionals. We are building a team of passionate security <br> 
-     experts who are ready to analyze threats, solve <br>
-     complex challenges, and defend the digital world. </p>
-       
-       
- </div>
-         
+        <!-- Position 2 -->
+        <div class="col-md-6 col-lg-3">
+          <article class="position-card h-100">
+            <img src="img/card2.png" class="position-card__img" alt="Penetration tester examining code">
+            <div class="position-card__body">
+              <h3 class="position-card__title">Penetration Tester</h3>
+              <p class="position-card__text">Find vulnerabilities and test security systems before attackers can exploit them.</p>
+              <ul class="tag-list">
+                <li>Ethical Hacking</li>
+                <li>Vulnerability Testing</li>
+                <li>Security Reports</li>
+              </ul>
+            </div>
+            <div class="position-card__footer">
+              <a href="#" class="btn btn-accent btn-sm">Apply</a>
+              <a href="#" class="btn btn-link-light btn-sm">Details</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Position 3 -->
+        <div class="col-md-6 col-lg-3">
+          <article class="position-card h-100">
+            <img src="img/card3.png" class="position-card__img" alt="Network engineer configuring infrastructure">
+            <div class="position-card__body">
+              <h3 class="position-card__title">Network Security Engineer</h3>
+              <p class="position-card__text">Design and maintain secure networks and defend against unauthorized access.</p>
+              <ul class="tag-list">
+                <li>Network Protection</li>
+                <li>Firewall Management</li>
+                <li>Network Monitoring</li>
+              </ul>
+            </div>
+            <div class="position-card__footer">
+              <a href="#" class="btn btn-accent btn-sm">Apply</a>
+              <a href="#" class="btn btn-link-light btn-sm">Details</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Position 4 -->
+        <div class="col-md-6 col-lg-3">
+          <article class="position-card h-100">
+            <img src="img/card4.png" class="position-card__img" alt="Researcher analyzing threat data">
+            <div class="position-card__body">
+              <h3 class="position-card__title">Cyber Security Researcher</h3>
+              <p class="position-card__text">Research new threats and develop innovative security solutions.</p>
+              <ul class="tag-list">
+                <li>Threat Research</li>
+                <li>Malware Analysis</li>
+                <li>Security Innovation</li>
+              </ul>
+            </div>
+            <div class="position-card__footer">
+              <a href="#" class="btn btn-accent btn-sm">Apply</a>
+              <a href="#" class="btn btn-link-light btn-sm">Details</a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="section">
+    <div class="container">
+      <p class="section-eyebrow text-center">What we look for</p>
+      <h2 class="section-title text-center mb-5">Skills needed</h2>
+
+      <div class="row g-4 justify-content-center">
+
+        <div class="col-6 col-md-3">
+          <div class="skill-chip">
+            <i class="bi bi-diagram-3"></i>
+            <span>Network Security</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="skill-chip">
+            <i class="bi bi-bug"></i>
+            <span>Ethical Hacking</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="skill-chip">
+            <i class="bi bi-code-slash"></i>
+            <span>Programming &amp; Scripting</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="skill-chip">
+            <i class="bi bi-shield-check"></i>
+            <span>Incident Response</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section id="process" class="section section-alt">
+    <div class="container">
+      <p class="section-eyebrow text-center">How to join</p>
+      <h2 class="section-title text-center mb-5">Our hiring process</h2>
+
+      <div class="row g-4 text-center">
+
+        <div class="col-md-3">
+          <div class="process-step">
+            <span class="process-step__number">01</span>
+            <h3 class="process-step__title">Submit your application</h3>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="process-step">
+            <span class="process-step__number">02</span>
+            <h3 class="process-step__title">Complete a practical evaluation</h3>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="process-step">
+            <span class="process-step__number">03</span>
+            <h3 class="process-step__title">Interview with our team</h3>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="process-step">
+            <span class="process-step__number">04</span>
+            <h3 class="process-step__title">Join the team</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <p class="section-eyebrow text-center">Good to know</p>
+      <h2 class="section-title text-center mb-5">Frequently asked questions</h2>
+
+      <div class="accordion faq-accordion" id="faqAccordion">
+
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              Do I need previous cybersecurity experience?
+            </button>
+          </h3>
+          <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              No. We welcome both experienced professionals and motivated beginners with strong technical foundations and a passion for cybersecurity.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              Is remote work available?
+            </button>
+          </h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes. Depending on the position, we offer remote, hybrid, and on-site opportunities to fit different work preferences.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              What qualifications are required?
+            </button>
+          </h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              A background in Computer Science, Information Technology, Cybersecurity, or a related field is preferred, but equivalent skills and experience are also valued.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+              Which technical skills are most important?
+            </button>
+          </h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Knowledge of networking, Linux, scripting, ethical hacking, operating systems, and problem-solving are highly desirable for most roles.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+              How long does the hiring process take?
+            </button>
+          </h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              The recruitment process typically takes one to two weeks, including application review, technical assessment, and interview.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+              Do you provide training for new employees?
+            </button>
+          </h3>
+          <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes. Every new team member receives onboarding, mentorship, and access to continuous learning resources and professional development.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="contact-box">
+
+        <div class="row g-5">
+
+          <div class="col-lg-6">
+            <p class="section-eyebrow">Contact</p>
+            <h2 class="section-title mb-4">Company information</h2>
+            <dl class="info-list">
+              <div><dt>Company</dt><dd>CyberShield Solutions</dd></div>
+              <div><dt>Location</dt><dd>Beirut, Lebanon</dd></div>
+              <div><dt>Working Hours</dt><dd>Monday – Friday, 9:00 AM – 6:00 PM</dd></div>
+            </dl>
+          </div>
+
+          <div class="col-lg-6">
+            <p class="section-eyebrow">Reach us</p>
+            <h2 class="section-title mb-4">Contact details</h2>
+            <ul class="contact-list">
+              <li><i class="bi bi-telephone"></i> +961 71 234 567</li>
+              <li><i class="bi bi-envelope"></i> careers@cybershield.com</li>
+              <li><i class="bi bi-globe"></i> www.cybershield.com</li>
+              <li><i class="bi bi-geo-alt"></i> Hamra District, Beirut</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <hr class="contact-divider">
+
+        <div class="text-center">
+          <p class="section-eyebrow">Follow us</p>
+          <div class="d-flex justify-content-center flex-wrap gap-3 mb-4">
+            <a href="#" class="social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-btn" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
+          </div>
+
+          <p class="body-text mx-auto" style="max-width: 520px;">
+            Ready to defend the digital world? Join our cybersecurity experts and build your future with us.
+          </p>
+
+          <a href="#" class="btn btn-accent btn-lg mt-3">Apply Now</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+    <span class="footer-brand">CyberShield <span class="text-accent">Solutions</span></span>
+    <span class="footer-copy">© 2026 CyberShield Solutions. All rights reserved.</span>
   </div>
-         
-  </div>
+</footer>
 
-
-<p class="text-primary fs-1">----------</p>
-<p class="text-end text-primary fs-1">----------</p>
-
-
-<!-- positions -->
-
-<!-- Positions Section -->
-
-<div id="positions" class="mt-5 mb-5">
-
-    <h1 class="title text-center mb-5">_Positions_</h1>
-
-
-    <div class="cards mt-5">
-
-        <!-- Card 1 -->
-        <div class="card" style="width: 18rem;">
-
-            <img src="img\card1.png" class="card-img-top" alt="card1">
-
-            <div class="card-body">
-                <h5 class="card-title text-primary">Security Analyst</h5>
-
-                <p class="card-text text-white">
-                    Monitor systems, analyze threats, and help protect
-                    organizations from cyber attacks.
-                </p>
-            </div>
-
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item text-primary">Threat Monitoring</li>
-                <li class="list-group-item text-primary">Security Analysis</li>
-                <li class="list-group-item text-primary">Incident Response</li>
-            </ul>
-
-            <div class="card-body">
-                <a href="#" class="card-link">Apply</a>
-                <a href="#" class="card-link">Details</a>
-            </div>
-
-        </div>
-
-
-
-        <!-- Card 2 -->
-        <div class="card" style="width: 18rem;">
-
-            <img src="img\card2.png" class="card-img-top" alt="card2">
-
-            <div class="card-body">
-                <h5 class="card-title text-primary text-primary">Penetration Tester</h5>
-
-                <p class="card-text text-white">
-                    Find vulnerabilities and test security systems
-                    before attackers can exploit them.
-                </p>
-            </div>
-
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item text-primary">Ethical Hacking</li>
-                <li class="list-group-item text-primary">Vulnerability Testing</li>
-                <li class="list-group-item text-primary">Security Reports</li>
-            </ul>
-
-            <div class="card-body">
-                <a href="#" class="card-link">Apply</a>
-                <a href="#" class="card-link">Details</a>
-            </div>
-
-        </div>
-
-
-
-        <!-- Card 3 -->
-        <div class="card" style="width: 18rem;">
-
-            <img src="img\card3.png" class="card-img-top" alt="card3">
-
-            <div class="card-body">
-                <h5 class="card-title text-primary">Network Security Engineer</h5>
-
-                <p class="card-text text-white">
-                    Design and maintain secure networks and defend
-                    against unauthorized access.
-                </p>
-            </div>
-
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item text-primary">Network Protection</li>
-                <li class="list-group-item text-primary">Firewall Management</li>
-                <li class="list-group-item text-primary">Network Monitoring</li>
-            </ul>
-
-            <div class="card-body">
-                <a href="#" class="card-link">Apply</a>
-                <a href="#" class="card-link">Details</a>
-            </div>
-
-        </div>
-
-
-
-        <!-- Card 4 -->
-        <div class="card" style="width: 18rem;">
-
-            <img src="img\card4.png" class="card-img-top" alt="card4">
-
-            <div class="card-body">
-                <h5 class="card-title text-primary">Cyber Security Researcher</h5>
-
-                <p class="card-text text-white">
-                    Research new threats and develop innovative
-                    security solutions.
-                </p>
-            </div>
-
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item text-primary">Threat Research</li>
-                <li class="list-group-item text-primary">Malware Analysis</li>
-                <li class="list-group-item text-primary">Security Innovation</li>
-            </ul>
-
-            <div class="card-body">
-                <a href="#" class="card-link">Apply</a>
-                <a href="#" class="card-link">Details</a>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-
-
-<p class="text-primary fs-1">----------</p>
-<p class="text-end text-primary fs-1">----------</p>
-
-<!--skills-->
-
-<div id="skills" class="mb-5">
-
-    <h1 class="title mb-5 d-flex justify-content-center">Skills Needed</h1>
-
-    <h3 class="skills rounded-pill border border-danger p-3">Network Security</h3>
-    <h3 class="skills rounded-pill border border-danger p-3">Ethical Hacking</h3>
-    <h3 class="skills rounded-pill border border-danger p-3">Programming & Scripting</h3>
-    <h3 class="skills rounded-pill border border-danger p-3">Incident Response</h3>
-
-
-</div>
-
-
-<p class="text-primary fs-1">----------</p>
-<p class="text-end text-primary fs-1">----------</p>
-
-
-<!-- process -->
-
-<div id="process">
-
-     <h1 class="d-flex justify-content-center title mb-5">Process: How To Join Our Team</h1>
-
-      <div class="grid text-center">
-  <h3 class="g-col-6 g-col-md-4 text-white mb-3 rounded-pill process">Submit Your Application</h3>
-  <h3 class="g-col-6 g-col-md-4 text-white mb-3 rounded-pill process">Complete a practical evaluation</h3>
-  <h3 class="g-col-6 g-col-md-4 text-white mb-3 rounded-pill process">Interview With Our Team</h3>
-  <h3 class="g-col-6 g-col-md-4 text-white mb-3 rounded-pill process">Join The Team</h3>
-</div>
-
-</div>
-
-
-
-<p class="text-primary fs-1">----------</p>
-<p class="text-end text-primary fs-1">----------</p>
-
-
-<!-- FAQ -->
-
-<h1 class="title text-center mb-5">
-    Frequently Asked Questions
-</h1>
-
-
-<div id="faq" class="d-flex justify-content-center flex-wrap gap-5 mb-5">
-
-
-    <!-- First column -->
-
-    <div class="container text-center">
-
-
-        <!-- Card 1 -->
-        <div class="card mb-4" style="width: 18rem;">
-
-            <div class="card-body">
-
-                <h5 class="card-title title text-primary">
-                    Do I need previous cybersecurity experience?
-                </h5>
-
-                <h6 class="card-subtitle mb-2 text-white">
-                    Answer:
-                </h6>
-
-                <p class="card-text text-white">
-                    No. We welcome both experienced professionals and motivated beginners
-                    with strong technical foundations and a passion for cybersecurity.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- Card 2 -->
-        <div class="card mb-4" style="width: 18rem;">
-
-            <div class="card-body">
-
-                <h5 class="card-title text-primary">
-                    Is remote work available?
-                </h5>
-
-                <h6 class="card-subtitle mb-2 text-white">
-                    Answer:
-                </h6>
-
-                <p class="card-text text-white">
-                    Yes. Depending on the position, we offer remote, hybrid, and
-                    on-site opportunities to fit different work preferences.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- Card 3 -->
-        <div class="card mb-4" style="width: 18rem;">
-
-            <div class="card-body">
-
-                <h5 class="card-title text-primary">
-                    What qualifications are required?
-                </h5>
-
-                <h6 class="card-subtitle mb-2 text-white">
-                    Answer:
-                </h6>
-
-                <p class="card-text text-white">
-                    A background in Computer Science, Information Technology,
-                    Cybersecurity, or a related field is preferred, but equivalent
-                    skills and experience are also valued.
-                </p>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-
-
-
-    <!-- Second column -->
-
-    <div class="container text-center">
-
-
-        <!-- Card 4 -->
-        <div class="card mb-4" style="width: 18rem;">
-
-            <div class="card-body">
-
-                <h5 class="card-title text-primary">
-                    Which technical skills are most important?
-                </h5>
-
-                <h6 class="card-subtitle mb-2 text-white">
-                    Answer:
-                </h6>
-
-                <p class="card-text text-white">
-                    Knowledge of networking, Linux, scripting, ethical hacking,
-                    operating systems, and problem-solving are highly desirable
-                    for most roles.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-
-        <!-- Card 5 -->
-        <div class="card mb-4" style="width: 18rem;">
-
-            <div class="card-body">
-
-                <h5 class="card-title text-primary">
-                    How long does the hiring process take?
-                </h5>
-
-                <h6 class="card-subtitle mb-2 text-white">
-                    Answer:
-                </h6>
-
-                <p class="card-text text-white">
-                    The recruitment process typically takes between one and two weeks,
-                    including application review, technical assessment, and interview.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-
-        <!-- Card 6 -->
-        <div class="card mb-4" style="width: 18rem;">
-
-            <div class="card-body">
-
-                <h5 class="card-title text-primary">
-                    Do you provide training for new employees?
-                </h5>
-
-                <h6 class="card-subtitle mb-2 text-white">
-                    Answer:
-                </h6>
-
-                <p class="card-text text-white">
-                    Yes. Every new team member receives onboarding, mentorship,
-                    and access to continuous learning resources and professional
-                    development.
-                </p>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-
-</div>
-
-
-<p class="text-primary fs-1">----------</p>
-<p class="text-end text-primary fs-1">----------</p>
-
-
-<!-- Contact -->
-
-<div id="contact" class="container my-5 p-5">
-
-    <h1 class="title text-center mb-5">_Contact Us_</h1>
-
-    <div class="row g-5">
-
-        <!-- Company Information -->
-        <div class="col-lg-6">
-
-            <h2 class="text-primary mb-4">Company Information</h2>
-
-            <h5 class="text-white mb-3">
-                <span class="title">Company:</span> CyberShield Solutions
-            </h5>
-
-            <h5 class="text-white mb-3">
-                <span class="title">Location:</span> Beirut, Lebanon
-            </h5>
-
-            <h5 class="text-white mb-3">
-                <span class="title">Working Hours:</span><br>
-                Monday – Friday<br>
-                9:00 AM – 6:00 PM
-            </h5>
-
-        </div>
-
-
-        <!-- Contact Details -->
-        <div class="col-lg-6">
-
-            <h2 class="text-primary mb-4">Contact Details</h2>
-
-            <h5 class="text-white mb-3">📞 +961 71 234 567</h5>
-            <h5 class="text-white mb-3">📧 careers@cybershield.com</h5>
-            <h5 class="text-white mb-3">🌐 www.cybershield.com</h5>
-            <h5 class="text-white mb-3">📍 Hamra District, Beirut</h5>
-
-        </div>
-
-    </div>
-
-    <hr class="border-danger my-5">
-
-    <!-- Social Media -->
-
-    <h2 class="text-primary text-center mb-4">Follow Us</h2>
-
-    <div class="d-flex justify-content-center flex-wrap gap-4">
-
-        <a href="#" class="social-link">💼 LinkedIn</a>
-
-        <a href="#" class="social-link">📘 Facebook</a>
-
-        <a href="#" class="social-link">📷 Instagram</a>
-
-        <a href="#" class="social-link">🐦 X (Twitter)</a>
-
-    </div>
-
-    <p class="text-white text-center mt-5 fs-5">
-        Ready to defend the digital world?<br>
-        Join our cybersecurity experts and build your future with us.
-    </p>
-
-    <div class="text-center mt-4">
-
-        <a href="#" class="btn btn-primary px-5">
-            Apply Now
-        </a>
-
-    </div>
-
-</div>
-
-
-
-
-
-
-
-<!--script link -->
-
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
-
-
 </body>
-
 </html>
