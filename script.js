@@ -4253,3 +4253,688 @@ window.addEventListener("scroll", function(){
   );
 });
 //# sourceMappingURL=bootstrap.bundle.min.js.map
+
+
+
+/* =========================================================
+CYBERSHIELD SOLUTIONS
+Main JavaScript
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+```
+/* =====================================================
+   ELEMENTS
+   ===================================================== */
+
+const navbar = document.getElementById("mainNav");
+const navMenu = document.getElementById("navMenu");
+const navLinks = document.querySelectorAll("#mainNav .nav-link");
+const sections = document.querySelectorAll("main section[id]");
+const revealElements = document.querySelectorAll(".reveal");
+
+
+/* =====================================================
+   NAVBAR SCROLL EFFECT
+   ===================================================== */
+
+function handleNavbarScroll() {
+
+    if (!navbar) return;
+
+    if (window.scrollY > 40) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+}
+
+window.addEventListener("scroll", handleNavbarScroll, {
+    passive: true
+});
+
+handleNavbarScroll();
+
+
+/* =====================================================
+   ACTIVE NAVIGATION LINK
+   ===================================================== */
+
+function updateActiveNav() {
+
+    const scrollPosition = window.scrollY + 150;
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute("id");
+
+        if (
+            scrollPosition >= sectionTop &&
+            scrollPosition < sectionTop + sectionHeight
+        ) {
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+            });
+
+            const activeLink = document.querySelector(
+                `#mainNav .nav-link[href="#${sectionId}"]`
+            );
+
+            if (activeLink) {
+                activeLink.classList.add("active");
+            }
+        }
+    });
+}
+
+window.addEventListener("scroll", updateActiveNav, {
+    passive: true
+});
+
+updateActiveNav();
+
+
+/* =====================================================
+   SMOOTH NAVIGATION
+   ===================================================== */
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", event => {
+
+        const targetId = link.getAttribute("href");
+
+        if (!targetId || !targetId.startsWith("#")) {
+            return;
+        }
+
+        const target = document.querySelector(targetId);
+
+        if (!target) {
+            return;
+        }
+
+        event.preventDefault();
+
+        const navbarHeight = navbar
+            ? navbar.offsetHeight
+            : 0;
+
+        const targetPosition =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            navbarHeight;
+
+        window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth"
+        });
+
+
+        /* Close mobile navbar */
+
+        if (
+            navMenu &&
+            navMenu.classList.contains("show")
+        ) {
+
+            const collapse = bootstrap.Collapse.getInstance(navMenu);
+
+            if (collapse) {
+                collapse.hide();
+            }
+        }
+    });
+});
+
+
+/* =====================================================
+   SCROLL REVEAL
+   ===================================================== */
+
+if ("IntersectionObserver" in window) {
+
+    const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("active");
+
+                    observer.unobserve(entry.target);
+                }
+            });
+
+        },
+        {
+            threshold: 0.12,
+            rootMargin: "0px 0px -40px 0px"
+        }
+    );
+
+    revealElements.forEach(element => {
+        revealObserver.observe(element);
+    });
+
+} else {
+
+    revealElements.forEach(element => {
+        element.classList.add("active");
+    });
+}
+
+
+/* =====================================================
+   CARD STAGGER ANIMATION
+   ===================================================== */
+
+const cards = document.querySelectorAll(
+    ".position-card, .skill-chip, .process-step"
+);
+
+if ("IntersectionObserver" in window) {
+
+    const cardObserver = new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach(entry => {
+
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                const card = entry.target;
+
+                const siblings = [
+                    ...card.parentElement.parentElement.children
+                ];
+
+                const index = siblings.indexOf(
+                    card.parentElement
+                );
+
+                card.style.transitionDelay =
+                    `${Math.min(index * 80, 320)}ms`;
+
+                card.style.opacity = "1";
+                card.style.transform = "translateY(0)";
+
+                observer.unobserve(card);
+            });
+
+        },
+        {
+            threshold: 0.1
+        }
+    );
+
+    cards.forEach(card => {
+
+        card.style.opacity = "0";
+        card.style.transform = "translateY(25px)";
+        card.style.transition =
+            "opacity 0.6s ease, transform 0.6s ease";
+
+        cardObserver.observe(card);
+    });
+}
+
+
+/* =====================================================
+   POSITION CARD HOVER TILT
+   ===================================================== */
+
+const positionCards = document.querySelectorAll(
+    ".position-card"
+);
+
+positionCards.forEach(card => {
+
+    card.addEventListener("mousemove", event => {
+
+        if (window.innerWidth < 992) {
+            return;
+        }
+
+        const rect = card.getBoundingClientRect();
+
+        const x =
+            event.clientX - rect.left;
+
+        const y =
+            event.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX =
+            ((y - centerY) / centerY) * -2;
+
+        const rotateY =
+            ((x - centerX) / centerX) * 2;
+
+        card.style.transform =
+            `translateY(-8px) perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform = "";
+    });
+});
+
+
+/* =====================================================
+   HERO IMAGE PARALLAX
+   ===================================================== */
+
+const heroImage = document.querySelector(".hero-image");
+
+if (heroImage && window.innerWidth >= 992) {
+
+    window.addEventListener("mousemove", event => {
+
+        const x =
+            (event.clientX / window.innerWidth - 0.5);
+
+        const y =
+            (event.clientY / window.innerHeight - 0.5);
+
+        const moveX = x * 8;
+        const moveY = y * 8;
+
+        heroImage.style.translate =
+            `${moveX}px ${moveY}px`;
+    });
+}
+
+
+/* =====================================================
+   BUTTON RIPPLE EFFECT
+   ===================================================== */
+
+const buttons = document.querySelectorAll(
+    ".btn-accent"
+);
+
+buttons.forEach(button => {
+
+    button.addEventListener("click", event => {
+
+        const ripple = document.createElement("span");
+
+        const rect = button.getBoundingClientRect();
+
+        const size =
+            Math.max(rect.width, rect.height);
+
+        ripple.style.position = "absolute";
+        ripple.style.width = `${size}px`;
+        ripple.style.height = `${size}px`;
+        ripple.style.left =
+            `${event.clientX - rect.left - size / 2}px`;
+        ripple.style.top =
+            `${event.clientY - rect.top - size / 2}px`;
+
+        ripple.style.borderRadius = "50%";
+        ripple.style.background =
+            "rgba(255,255,255,0.25)";
+        ripple.style.pointerEvents = "none";
+        ripple.style.transform = "scale(0)";
+        ripple.style.animation =
+            "cyberRipple 0.55s ease-out";
+
+        button.style.overflow = "hidden";
+
+        button.appendChild(ripple);
+
+        setTimeout(() => {
+            ripple.remove();
+        }, 600);
+    });
+});
+
+
+/* =====================================================
+   DYNAMIC RIPPLE CSS
+   ===================================================== */
+
+const rippleStyle = document.createElement("style");
+
+rippleStyle.textContent = `
+    @keyframes cyberRipple {
+        to {
+            transform: scale(2.5);
+            opacity: 0;
+        }
+    }
+`;
+
+document.head.appendChild(rippleStyle);
+
+
+/* =====================================================
+   APPLY BUTTONS
+   ===================================================== */
+
+const applyButtons = document.querySelectorAll(
+    ".position-card__footer .btn-accent, #contact .btn-accent"
+);
+
+applyButtons.forEach(button => {
+
+    button.addEventListener("click", event => {
+
+        const href = button.getAttribute("href");
+
+        if (href === "#") {
+
+            event.preventDefault();
+
+            const positionCard =
+                button.closest(".position-card");
+
+            if (positionCard) {
+
+                const positionTitle =
+                    positionCard.querySelector(
+                        ".position-card__title"
+                    );
+
+                if (positionTitle) {
+
+                    const position =
+                        positionTitle.textContent.trim();
+
+                    showApplicationMessage(position);
+                }
+
+            } else {
+
+                showApplicationMessage("CyberShield Solutions");
+            }
+        }
+    });
+});
+
+
+/* =====================================================
+   APPLICATION MESSAGE
+   ===================================================== */
+
+function showApplicationMessage(position) {
+
+    const existing =
+        document.querySelector(".application-notice");
+
+    if (existing) {
+        existing.remove();
+    }
+
+    const notice =
+        document.createElement("div");
+
+    notice.className =
+        "application-notice";
+
+    notice.innerHTML = `
+        <div class="application-notice__icon">
+            <i class="bi bi-shield-check"></i>
+        </div>
+
+        <div>
+            <strong>Application for ${position}</strong>
+            <p>
+                The application form will be available soon.
+                Please check back shortly.
+            </p>
+        </div>
+
+        <button type="button" aria-label="Close">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    `;
+
+    document.body.appendChild(notice);
+
+    const noticeStyle =
+        document.createElement("style");
+
+    noticeStyle.textContent = `
+        .application-notice {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            z-index: 9999;
+
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+
+            width: min(420px, calc(100vw - 30px));
+
+            padding: 18px;
+
+            background: #101827;
+
+            border: 1px solid rgba(0,229,255,.25);
+            border-radius: 14px;
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,.4),
+                0 0 30px rgba(0,229,255,.08);
+
+            color: #f4f7fb;
+
+            animation: cyberNoticeIn .35s ease forwards;
+        }
+
+        .application-notice__icon {
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            color: #00e5ff;
+
+            background: rgba(0,229,255,.08);
+
+            border-radius: 9px;
+
+            font-size: 1.2rem;
+        }
+
+        .application-notice strong {
+            display: block;
+
+            margin-bottom: 4px;
+
+            font-family: "Space Grotesk", sans-serif;
+        }
+
+        .application-notice p {
+            margin: 0;
+
+            color: #a7b2c4;
+
+            font-size: .82rem;
+            line-height: 1.5;
+        }
+
+        .application-notice button {
+            margin-left: auto;
+
+            padding: 3px;
+
+            color: #718096;
+
+            background: transparent;
+            border: 0;
+
+            cursor: pointer;
+        }
+
+        .application-notice button:hover {
+            color: #fff;
+        }
+
+        @keyframes cyberNoticeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes cyberNoticeOut {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+    `;
+
+    document.head.appendChild(noticeStyle);
+
+    const closeButton =
+        notice.querySelector("button");
+
+    closeButton.addEventListener("click", () => {
+
+        notice.style.animation =
+            "cyberNoticeOut .25s ease forwards";
+
+        setTimeout(() => {
+            notice.remove();
+        }, 250);
+    });
+
+    setTimeout(() => {
+
+        if (!document.body.contains(notice)) {
+            return;
+        }
+
+        notice.style.animation =
+            "cyberNoticeOut .25s ease forwards";
+
+        setTimeout(() => {
+            notice.remove();
+        }, 250);
+
+    }, 5000);
+}
+
+
+/* =====================================================
+   FAQ ACCESSIBILITY
+   ===================================================== */
+
+const faqButtons =
+    document.querySelectorAll(".faq-accordion .accordion-button");
+
+faqButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        setTimeout(() => {
+
+            const expanded =
+                button.getAttribute("aria-expanded");
+
+            if (expanded === "true") {
+                button.classList.remove("collapsed");
+            }
+
+        }, 50);
+    });
+});
+
+
+/* =====================================================
+   SOCIAL BUTTONS
+   ===================================================== */
+
+const socialButtons =
+    document.querySelectorAll(".social-btn");
+
+socialButtons.forEach(button => {
+
+    button.addEventListener("click", event => {
+
+        if (button.getAttribute("href") === "#") {
+            event.preventDefault();
+        }
+    });
+});
+
+
+/* =====================================================
+   KEYBOARD ESCAPE
+   ===================================================== */
+
+document.addEventListener("keydown", event => {
+
+    if (event.key !== "Escape") {
+        return;
+    }
+
+    const notice =
+        document.querySelector(".application-notice");
+
+    if (notice) {
+        notice.remove();
+    }
+});
+
+
+/* =====================================================
+   PERFORMANCE: DISABLE PARALLAX ON MOBILE
+   ===================================================== */
+
+function handleResponsiveEffects() {
+
+    if (!heroImage) {
+        return;
+    }
+
+    if (window.innerWidth < 992) {
+        heroImage.style.translate = "0 0";
+    }
+}
+
+window.addEventListener(
+    "resize",
+    handleResponsiveEffects
+);
+
+handleResponsiveEffects();
+
+
+/* =====================================================
+   PAGE LOADED
+   ===================================================== */
+
+document.body.classList.add("page-loaded");
+```
+
+});
